@@ -212,10 +212,13 @@ pKVM이 제공하는 것은 Stage-2 기반 메모리 격리라는 **메커니즘
 | **포함** | pVM 제어 및 HW IP 할당을 위한 커널 드라이버 개발 |
 | **포함** | Secure Vision AI 레퍼런스 시나리오 End-to-End 통합·검증 |
 | **포함** | 기존 TrustZone Secure OS와의 공존 인터페이스 |
+| **포함** | 기존 Secure OS를 pVM 격리 도메인에서 동작·확장시키기 위한 SW 이식·수정 (R-4 동적 확장성, R-5 Secure OS 상호운용 충족에 필요) |
 | **제외** | pKVM 커널(EL2 Hypervisor) 자체 포팅 — 기 포팅된 pKVM 커널을 전제로 함 |
-| **제외** | Secure OS 자체 개발, HW IP(ISP·NPU) 하드웨어 설계 |
+| **제외** | 신규 Secure OS의 처음부터의 개발(from scratch), HW IP(ISP·NPU) 하드웨어 설계 |
 
 > 2026-05-29 리뷰 회의 결정: pKVM 포팅은 범위에서 제외하고, 이를 제어하는 상위 커널 드라이버·미들웨어·프레임워크 개발에 집중한다.
+>
+> 단, R-4(동적 확장성)·R-5(Secure OS 상호운용)를 격리 도메인에서 충족하려면 기존 Secure OS를 pVM 환경에 맞게 이식·수정하는 작업이 불가피하므로, Secure OS의 신규 개발은 제외하되 기존 Secure OS의 이식·수정은 범위에 포함한다.
 
 ---
 
